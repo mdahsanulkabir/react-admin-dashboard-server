@@ -21,8 +21,13 @@ const createUser = async ( req, res ) => {
     }
 }
 
-const getusers = async ( req, res ) => {
-
+const getUsers = async ( req, res ) => {
+    try {
+        const users = await USER.find({}).populate('accessId')
+        res.status(200).json(users);
+    } catch {
+        res.status(400).json({ error: error.message });
+    }
 }
 
 const updateUser = async ( req, res ) => {
@@ -72,7 +77,7 @@ const login = async ( req, res ) => {
 
 module.exports = {
     createUser,
-    getusers,
+    getUsers,
     updateUser,
     login
 }

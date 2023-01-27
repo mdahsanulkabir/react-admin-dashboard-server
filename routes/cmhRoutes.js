@@ -22,7 +22,7 @@ const {
 } = require('../controllers/serviceController');
 const {
     createUser,
-    getusers,
+    getUsers,
     updateUser,
     login
 } = require('../controllers/userController')
@@ -58,7 +58,7 @@ router.get('/getServices', getServices)
 
 //?  user 
 router.post('/createUser', createUser)
-router.get('/getusers', getusers)
+router.get('/getusers', getUsers)
 router.patch('/updateUser', updateUser)
 router.post('/login', login)
 

@@ -17,7 +17,7 @@ const createRole = async (req, res) => {
 
 //get all roles
 const getRoles = async (req, res) => {
-    console.log("role in getroles", req.userRole);
+    // console.log("role in getroles", req.userRole);
     try {
         const roles = await AUTHORIZATION.find({})
         res.status(200).json(roles);
