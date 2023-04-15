@@ -29,6 +29,7 @@ const {
 const {
     createInvoice,
     getInvoice,
+    getAllInvoices,
     getNumberOfInvoices
 } = require('../controllers/invoiceController')
 
@@ -71,6 +72,7 @@ router.get('/getNumberOfPatients',getNumberOfPatients)
 //? invoice
 router.post('/createInvoice',createInvoice)
 router.get('/getInvoice/:id',getInvoice)
+router.get('/getAllInvoices', getAllInvoices)
 router.get('/getNumberOfInvoices',getNumberOfInvoices)
 
 

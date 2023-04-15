@@ -44,6 +44,17 @@ const getInvoice = async ( req, res ) => {
     }
 }
 
+const getAllInvoices = async ( req, res ) => {
+
+    try {
+        const invoice = await INVOICE.find({}).populate('patientId').populate('billedServices.serviceId')
+        console.log(invoice);
+        res.status(200).json(invoice);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+}
+
 //get number of invoices
 const getNumberOfInvoices = async ( req, res ) => {
     try {
@@ -57,5 +68,6 @@ const getNumberOfInvoices = async ( req, res ) => {
 module.exports = {
     createInvoice,
     getInvoice,
+    getAllInvoices,
     getNumberOfInvoices
 }
